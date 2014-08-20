@@ -16,6 +16,15 @@ module.exports = function(grunt) {
                 }
             }
         },
+        uglify: {
+            tomorrow: {
+                files: {
+                    'dist/tomorrow.min.js': [
+                        'dist/tomorrow.js'
+                    ]
+                }
+            }
+        },
         watch: {
             tomorrow: {
                 files: [
@@ -31,5 +40,6 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
 };

@@ -1,6 +1,6 @@
 {
   "name": "ng-tomorrow",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Fake future(promise) library for unit testing",
   "repository": "git@github.com:tnwt7/tomorrow.git",
   "main": "dist/tomorrow.js",
