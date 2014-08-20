@@ -28,11 +28,19 @@ describe 'futureFn', ->
 
         describe 'done()', ->
 
-            it 'should call a resolve function with resolve data', ->
+            it 'should call a resolve function with resolved data', ->
                 fn = futureFn 'no name'
                 resolveFn = jasmine.createSpy 'resolve function'
                 fn().then resolveFn
                 fn.done('data')
                 expect(resolveFn).toHaveBeenCalledWith('data')
 
+        describe 'fail()', ->
+
+            it 'should call a reject function with rejected data', ->
+                fn = futureFn 'no name'
+                rejectFn = jasmine.createSpy 'reject function'
+                fn().then undefined, rejectFn
+                fn.fail('data')
+                expect(rejectFn).toHaveBeenCalledWith('data')
 

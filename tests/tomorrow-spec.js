@@ -28,14 +28,24 @@
         fn = futureFn('no name');
         return expect(angular.isFunction(fn.fail)).toBe(true);
       });
-      return describe('done()', function() {
-        return it('should call a resolve function with resolve data', function() {
+      describe('done()', function() {
+        return it('should call a resolve function with resolved data', function() {
           var fn, resolveFn;
           fn = futureFn('no name');
           resolveFn = jasmine.createSpy('resolve function');
           fn().then(resolveFn);
           fn.done('data');
           return expect(resolveFn).toHaveBeenCalledWith('data');
+        });
+      });
+      return describe('fail()', function() {
+        return it('should call a reject function with rejected data', function() {
+          var fn, rejectFn;
+          fn = futureFn('no name');
+          rejectFn = jasmine.createSpy('reject function');
+          fn().then(void 0, rejectFn);
+          fn.fail('data');
+          return expect(rejectFn).toHaveBeenCalledWith('data');
         });
       });
     });
