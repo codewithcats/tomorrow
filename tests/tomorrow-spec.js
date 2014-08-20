@@ -6,10 +6,31 @@
     beforeEach(inject(function(_futureFn_) {
       return futureFn = _futureFn_;
     }));
-    return it('should create function', function() {
+    it('should create function', function() {
       var fn;
       fn = futureFn('no name');
       return expect(angular.isFunction(fn)).toBe(true);
+    });
+    return describe('returned function', function() {
+      it('should return promise with then()', function() {
+        var fn, promise;
+        fn = futureFn('no name');
+        promise = fn();
+        return expect(angular.isFunction(promise.then)).toBe(true);
+      });
+      it('should has done()', function() {
+        var fn;
+        fn = futureFn('no name');
+        return expect(angular.isFunction(fn.done)).toBe(true);
+      });
+      it('should has fail()', function() {
+        var fn;
+        fn = futureFn('no name');
+        return expect(angular.isFunction(fn.fail)).toBe(true);
+      });
+      return describe('done()', function() {
+        return it('should call a callback with resolve data', function() {});
+      });
     });
   });
 
