@@ -29,7 +29,14 @@
         return expect(angular.isFunction(fn.fail)).toBe(true);
       });
       return describe('done()', function() {
-        return it('should call a callback with resolve data', function() {});
+        return it('should call a resolve function with resolve data', function() {
+          var fn, resolveFn;
+          fn = futureFn('no name');
+          resolveFn = jasmine.createSpy('resolve function');
+          fn().then(resolveFn);
+          fn.done('data');
+          return expect(resolveFn).toHaveBeenCalledWith('data');
+        });
       });
     });
   });

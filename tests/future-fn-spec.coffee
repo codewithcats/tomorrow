@@ -28,5 +28,11 @@ describe 'futureFn', ->
 
         describe 'done()', ->
 
-            it 'should call a callback with resolve data', ->
+            it 'should call a resolve function with resolve data', ->
+                fn = futureFn 'no name'
+                resolveFn = jasmine.createSpy 'resolve function'
+                fn().then resolveFn
+                fn.done('data')
+                expect(resolveFn).toHaveBeenCalledWith('data')
+
 
