@@ -1,4 +1,4 @@
 tomorrow
 ========
 
-A library help you test future(promise) things with ease.
+A JavaScript library help you test future(promise) things with ease.
