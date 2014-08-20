@@ -22,7 +22,9 @@ module.exports = function(grunt) {
                     'src/tomorrow.coffee',
                     'tests/*-spec.coffee'
                 ],
-                tasks: ['coffee:tomorrow']
+                tasks: [
+                    'coffee:tomorrow'
+                ]
             }
         }
     });
