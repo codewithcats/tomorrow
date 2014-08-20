@@ -1,7 +1,7 @@
 prettyPrint = (data) ->
     if angular.isString(data) or angular.isFunction(data) or data instanceof RegExp then data else angular.toJson(data)
 
-futureFn = (fnName, fnConfig) ->
+futureFn = (fnName, fnConfig=promise:true) ->
     expectation = null
     calledWithArgs = null
     promise = then: (@resolve, @reject) =>

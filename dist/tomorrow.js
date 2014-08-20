@@ -11,6 +11,11 @@
 
   futureFn = function(fnName, fnConfig) {
     var calledWithArgs, expectation, fn, promise;
+    if (fnConfig == null) {
+      fnConfig = {
+        promise: true
+      };
+    }
     expectation = null;
     calledWithArgs = null;
     promise = {
