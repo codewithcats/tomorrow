@@ -1,0 +1,29 @@
+{
+  "name": "ng-tomorrow",
+  "version": "0.1.0",
+  "authors": [
+    "Tanawat Tassana <amp.tanawat@gmail.com>"
+  ],
+  "description": "Fake future(promise) library for unit testing",
+  "main": "dist/tomorrow.js",
+  "keywords": [
+    "angularjs",
+    "unit",
+    "test",
+    "promise",
+    "future",
+    "mock"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.22",
+    "angular-mocks": "~1.2.22"
+  }
+}
